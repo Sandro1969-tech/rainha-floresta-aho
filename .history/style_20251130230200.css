@@ -1,0 +1,144 @@
+:root {
+  /* Paleta esverdeada */
+  --verde-profundo: #1B3A2F;
+  --verde-floresta: #2E8B57;
+  --verde-aurora: #88D498;
+  --dourado-suave: #EAC67A;
+  --azul-folha: #3BA99C;
+  --branco-neblina: #F5F5F5;
+
+  /* Gradientes */
+  --grad-floresta: linear-gradient(135deg, #1B3A2F 0%, #2E8B57 40%, #88D498 70%, #EAC67A 100%);
+  --grad-dourado-verde: linear-gradient(120deg, #1B3A2F 0%, #3BA99C 40%, #EAC67A 100%);
+}
+
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  body { position: relative; }
+  font-family: 'Montserrat', sans-serif;
+  background: var(--verde-profundo);
+  color: var(--branco-neblina);
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(27,58,47,.9);
+  padding: 1rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 100;
+}
+.brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  background: var(--grad-floresta);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+nav a {
+  margin: 0 .8rem;
+  font-weight: 600;
+  color: var(--branco-neblina);
+  transition: .3s;
+}
+nav a:hover { color: var(--dourado-suave); }
+
+/* Hero */
+.hero {
+  min-height: 90vh;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center;
+  padding-top: 80px;
+  position: relative;
+}
+.hero video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(.6) saturate(1.1);
+  z-index: -1;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  background: var(--grad-floresta);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.hero p {
+  max-width: 600px;
+  margin: 1rem auto;
+  color: rgba(245,245,245,.85);
+}
+.btn {
+  .btn {
+  color: #1B3A2F; /* texto escuro sobre gradiente claro */
+}
+  padding: .8rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  background: var(--grad-dourado-verde);
+  border: none;
+  cursor: pointer;
+  transition: .3s;
+  margin: .5rem;
+}
+.btn:hover { transform: scale(1.05); }
+
+/* Seções */
+section { padding: 60px 20px; }
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  background: var(--grad-floresta);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Grid de cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+}
+.card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: .3s;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(46,139,87,.3);
+}
+.card img {
+  
+  width: 100%; height: 200px;
+  object-fit: cover;
+  transition: .4s;
+}
+.card-body { padding: 15px; }
+.price { color: var(--dourado-suave); font-weight: 700; }
+
+/* Footer */
+footer {
+  background: rgba(27,58,47,.9);
+  padding: 30px;
+  text-align: center;
+  font-size: .9rem;
+}
+
+.landing {
+  position: relative; /* importante para que o filho absoluto se baseie nela */
+  min-height: 100vh;
+  background-color: #f5f5f5; /* cor de fundo */
+}
+
